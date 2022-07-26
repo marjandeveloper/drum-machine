@@ -1,3 +1,4 @@
+// import React, { useState } from 'react'
 import './App.scss'
 
 const dataBankA = [
@@ -21,69 +22,60 @@ const dataBankA = [
   },
   {
     keyCode: 65,
-    keyTrigger: 'A',
+    keyText: 'A',
     id: 'Ambient_tom_1',
     url: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/264[kb]ambient_tom_1.wav.mp3',
   },
   {
     keyCode: 83,
-    keyTrigger: 'S',
+    keyText: 'S',
     id: 'Ambient_tom_2',
     url: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/311[kb]ambient_tom_2.wav.mp3',
   },
   {
     keyCode: 68,
-    keyTrigger: 'D',
+    keyText: 'D',
     id: 'Acoustic_snare',
     url: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3',
   },
   {
     keyCode: 90,
-    keyTrigger: 'Z',
+    keyText: 'Z',
     id: 'Basic-ekick',
     url: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/120[kb]basic-ekick.wav.mp3',
   },
   {
+    keyCode: 88,
+    keyText: 'X',
+    id: 'Kick',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3',
+  },
+  {
     keyCode: 67,
-    keyTrigger: 'C',
+    keyText: 'C',
     id: 'Kick-hat-inxs',
     url: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/81[kb]kick-hat-inxs.wav.mp3',
   },
 ]
+const playSound = (el) => {
+  return el.target.firstChild.play()
+}
+
+const showDrumPad = dataBankA.map((el) => {
+  return (
+    <button className='drum-pad' id={el.id} key={el.id} onClick={playSound}>
+      <audio className='clip' src={el.url} id={el.keyText}></audio>
+      {el.keyText}
+    </button>
+  )
+})
 
 function App() {
   return (
     <div className='App'>
       <div className='drum-machine'>
-        <div id='drum-pads'>
-          <button className='drum-pad' id='Q'>
-            Q
-          </button>
-          <button className='drum-pad' id='W'>
-            W
-          </button>
-          <button className='drum-pad' id='E'>
-            E
-          </button>
-          <button className='drum-pad' id='A'>
-            A
-          </button>
-          <button className='drum-pad' id='S'>
-            S
-          </button>
-          <button className='drum-pad' id='D'>
-            D
-          </button>
-          <button className='drum-pad' id='Z'>
-            Z
-          </button>
-          <button className='drum-pad' id='X'>
-            X
-          </button>
-          <button className='drum-pad' id='C'>
-            C
-          </button>
-        </div>
+        <div id='drum-pads'>{showDrumPad}</div>
+
         <div id='display'></div>
       </div>
     </div>
