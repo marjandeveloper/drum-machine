@@ -1,3 +1,96 @@
 .App {
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(109, 109, 109);
+
+  #drum-machine {
+    display: flex;
+    flex-flow: row wrap;
+    border: 2px solid beige;
+    width: 500px;
+    height: 300px;
+    background-color: rgb(147, 187, 179);
+    padding: 30px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+
+    #title {
+      width: 100%;
+      height: 14%;
+      font-size: 28px;
+      text-align: center;
+      background-color: rgb(47, 47, 254);
+      color: white;
+      border-radius: 5px;
+      border: 2px solid beige;
+      -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+      -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+      box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+    }
+
+    #content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 70%;
+
+      #drum-pads {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 5%;
+        width: 50%;
+        height: 100%;
+        padding: 2px;
+        border: 2px solid beige;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+        -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+        box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+
+        .drum-pad {
+          flex: calc(100% / 3 - 6px);
+          background-color: rgb(214, 236, 244);
+          border: 2px solid beige;
+          margin: 2px;
+          border-radius: 5px;
+          color: rgb(49, 49, 118);
+          font-weight: bold;
+        }
+      }
+
+      #display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+        background-color: beige;
+        border: 5px solid rgb(243, 248, 247);
+        border-radius: 3.5px;
+        -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+        -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+        box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.53);
+
+        .contentText {
+          text-align: center;
+          width: 150px;
+          padding: 10px;
+          background-color: rgb(139, 173, 166);
+          color: white;
+          border-radius: 5px;
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
 }
